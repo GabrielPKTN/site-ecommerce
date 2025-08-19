@@ -1,31 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --c-primary: #0086FF;
+    --c-gradient: to right, #FFFE48, #FF8803, #FF273B, #E938CA, #A502E2, #1EB5FF, #0389FB, #52D799, #06D80A  ;
+}
+
 body {
     height: 100dvh;
     width: 100dvw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--c-primary);
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 header {
-    width: 75%;
-    background-color: #0086FF;
+    width: 80%;
+    border-bottom: solid 5px;
+    border-image: linear-gradient(var(--c-gradient)) 1;
+    color: white;
 }
 
 header img {
-    height: 30%;
-    width: 30%;
+    height: 150px;
+    width: 150px;
 }
 
 .menu-loja {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+    font-size: 10px;
 }
 
 .atendimento {
@@ -50,4 +67,99 @@ header img {
 .area-interacao {
     display: flex;
     flex-direction: row;
+    
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.input-box {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    height: 40%;
+    position: relative;
+}
+
+.input-box input {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    border-radius: 5px;
+    border: none;
+}
+
+.icone-busca {
+    position: absolute;
+    padding-top: 1.5%;
+    padding-left: 90%;
+}
+
+.mensagem-bem-vindo {
+    display: flex;
+    flex-direction: column;
+}
+
+.ofertas-regiao {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    width: 20%;
+}
+
+.fa-location-pin {
+    font-size: 2rem;
+    height: 100%;
+
+}
+
+.fa-heart {
+    font-size: 2rem;
+}
+
+.fa-bag-shopping {
+    font-size: 2rem;
+}
+
+.menu-input {
+    display: flex;
+    padding-top: 10%;
+    list-style-type: none;
+    font-size: 0.7rem;
+    gap: 5px;
+}
+
+.menu-produtos {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: 16px;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.fa-bars {
+    padding: 6px;
+}
+
+.fa-chevron-down {
+    padding: 5px;
+}
+
+.fa-credit-card {
+    padding: 5px;
+}
+
+main {
+    background-color: white;
+    width: 100%;
+    height: 300px;
 }
