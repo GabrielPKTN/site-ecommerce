@@ -38,21 +38,14 @@ header img {
     width: 150px;
 }
 
-.menu-loja {
+.menu-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 10px;
 }
 
-.atendimento {
-    list-style: none;
-    display: flex;
-    padding: 10px;
-    gap: 20px;
-}
-
-.lojas-filial-acessibilidade {
+.ul-menu-top {
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -64,13 +57,20 @@ header img {
     justify-content: center;
 }
 
-.area-interacao {
+.ul-menu-top-right {
+    list-style: none;
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+}
+
+.mid-header {
     display: flex;
     flex-direction: row;
     
 }
 
-.menu {
+.menu-mid {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -100,6 +100,14 @@ header img {
     padding-left: 90%;
 }
 
+.menu-input-box {
+    display: flex;
+    padding-top: 10%;
+    list-style-type: none;
+    font-size: 0.7rem;
+    gap: 5px;
+}
+
 .mensagem-bem-vindo {
     display: flex;
     flex-direction: column;
@@ -126,13 +134,7 @@ header img {
     font-size: 2rem;
 }
 
-.menu-input {
-    display: flex;
-    padding-top: 10%;
-    list-style-type: none;
-    font-size: 0.7rem;
-    gap: 5px;
-}
+
 
 .menu-produtos {
     display: flex;
