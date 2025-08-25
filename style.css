@@ -161,7 +161,101 @@ header img {
 }
 
 main {
-    background-color: white;
+    background-color: rgb(250, 250, 250);
     width: 100%;
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-main {
+    width: 75%;
+}
+
+.container-carrossel {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background-color: tomato;
+    height: 20vh;
+}
+
+.container-carrossel img {
+    border-radius: 15px;
+}
+
+.mid-main {
+    width: 75%;
+}
+
+.container-slider {
+    height: 30vh;
+    width: 100%;
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container-produtos {
+    position: absolute;
+    height: 30vh;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    padding-inline: 50px;
+    gap: 15px;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    min-width: 12%;
+    text-align: justify;
+    align-items: center;
+    background-color: tomato;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.produto label {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.produto p {
+    font-size: 12px;
+}
+
+.produto span {
+    font-weight: 600;
+}
+
+.produto img {
+    object-fit: contain;
+    width: 70%;
+}
+
+.container-slider button {
+    z-index: 1;
+    width: 2rem;
+    height: 90%;
+    font-size: 1rem;
+    background-color: white;
+    border: none;
+}
+
+.previous {
+    box-shadow: 5px 0 10px 5px  #FFF;
+}
+
+.next {
+    box-shadow: -5px 0 10px 5px  #FFF;
 }
