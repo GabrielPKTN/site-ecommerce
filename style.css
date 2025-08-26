@@ -136,6 +136,7 @@ header img {
 
 
 
+
 .menu-produtos {
     display: flex;
     flex-direction: row;
@@ -191,7 +192,7 @@ main {
 }
 
 .container-slider {
-    height: 30vh;
+    height: 35vh;
     width: 100%;
     background-color: #FFF;
     display: flex;
@@ -204,28 +205,36 @@ main {
 
 .container-produtos {
     position: absolute;
-    height: 30vh;
+    height: 35vh;
     width: 75%;
     display: flex;
     align-items: center;
     padding-inline: 50px;
     gap: 15px;
+    overflow: hidden;
 }
 
 .produto {
     display: flex;
     flex-direction: column;
-    height: 90%;
-    min-width: 12%;
+    height: 30vh;
+    min-width: 15%;
     text-align: justify;
     align-items: center;
-    background-color: tomato;
     padding: 10px;
     border-radius: 10px;
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.produto:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+                0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .produto label {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     text-align: center;
 }
@@ -250,6 +259,7 @@ main {
     font-size: 1rem;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 .previous {
