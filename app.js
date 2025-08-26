@@ -19,6 +19,9 @@ function criarProduto(jsonProduto) {
     const precoProduto = document.createElement('span')
 
     produto.classList.add('produto')
+
+    produto.setAttribute('id', jsonProduto.id)
+
     divDescricao.classList.add('container-descricao')
 
     imagemProduto.src = jsonProduto.imagem
@@ -45,7 +48,8 @@ function previous() {
 
     const containerProduto = document.getElementById('container-produtos')
 
-    containerProduto.appendChild(produtos[0])
+    const lastProduto = produtos[produtos.length -1]
+    containerProduto.insertBefore(lastProduto, produtos[0])
     produtos = document.querySelectorAll('.produto')
 
 }
@@ -56,11 +60,20 @@ function next() {
 
     const containerProduto = document.getElementById('container-produtos')
 
-    const lastProduto = produtos[produtos.length -1]
-    containerProduto.insertBefore(lastProduto, produtos[0])
+    containerProduto.appendChild(produtos[0])
     produtos = document.querySelectorAll('.produto')
 
 }
+
+const produto = document.querySelector('.produto')
+
+function verificaId() {
+
+    
+
+}
+
+produto.addEventListener('click', verificaId)
 
 buttonPrevious.addEventListener('click', previous)
 buttonNext.addEventListener('click', next)
