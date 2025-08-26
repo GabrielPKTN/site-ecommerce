@@ -7,7 +7,7 @@
 }
 
 :root {
-    --c-primary: #0086FF;
+    --c-primary: #000;
     --c-gradient: to right, #FFFE48, #FF8803, #FF273B, #E938CA, #A502E2, #1EB5FF, #0389FB, #52D799, #06D80A  ;
 }
 
@@ -192,6 +192,7 @@ main {
 }
 
 .container-slider {
+    position: relative;
     height: 35vh;
     width: 100%;
     background-color: #FFF;
@@ -206,7 +207,7 @@ main {
 .container-produtos {
     position: absolute;
     height: 35vh;
-    width: 75%;
+    width: 100%;
     display: flex;
     align-items: center;
     padding-inline: 50px;
@@ -214,18 +215,22 @@ main {
     overflow: hidden;
 }
 
+.produto:first-child {
+     margin-left: -19%;
+}
+
 .produto {
     display: flex;
     flex-direction: column;
-    height: 30vh;
-    min-width: 15%;
-    text-align: justify;
+    height: 32vh;
+    min-width: 18%;
+    text-align: center;
     align-items: center;
     padding: 10px;
     border-radius: 10px;
     transition: ease-in-out 0.3s;
     cursor: pointer;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .produto:hover {
@@ -233,18 +238,26 @@ main {
                 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-.produto label {
+.container-descricao{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-descricao label{
     font-size: 12px;
     font-weight: 600;
     text-align: center;
 }
 
-.produto p {
+.container-descricao p {
     font-size: 12px;
+    text-align: justify;
 }
 
-.produto span {
+.container-descricao span {
     font-weight: 600;
+    display: flex;
+    
 }
 
 .produto img {
