@@ -72,9 +72,15 @@ function next() {
 
 
 
-function verificaId(produto) {
+function retornaDadosProduto(produto) {
     produto = produto.parentElement
-    console.log(produto.id)
+    const produtoId = produto.id
+    
+    console.log(produtoId)
+
+    const jsonProduto = jsonProdutos.find(jsonProduto => jsonProduto.id === Number(produtoId))
+
+    alert(`O produto que você clicou foi ${jsonProduto.nome}`)
 }
 
 produtos.forEach(addListener)
@@ -83,7 +89,7 @@ function addListener(produto) {
     const produtoFilho = produto.firstElementChild
 
     produto.addEventListener('click', () => {
-        verificaId(produtoFilho)
+        retornaDadosProduto(produtoFilho)
     })
 }
 
