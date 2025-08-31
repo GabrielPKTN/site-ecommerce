@@ -12,8 +12,10 @@ function criarProduto(jsonProduto) {
     const containerProduto = document.getElementById('container-produtos')
 
     const produto = document.createElement('div')
+    const divInvisivelClick = document.createElement('div')
     const imagemProduto = document.createElement('img')
     const divDescricao = document.createElement('div')
+    const divDescricaoLabelP = document.createElement('div')
     const nomeProduto = document.createElement('label')
     const descricaoProduto = document.createElement('p')
     const precoProduto = document.createElement('span')
@@ -23,6 +25,7 @@ function criarProduto(jsonProduto) {
     produto.setAttribute('id', jsonProduto.id)
 
     divDescricao.classList.add('container-descricao')
+    divInvisivelClick.classList.add('div-invisivel-click')
 
     imagemProduto.src = jsonProduto.imagem
     nomeProduto.textContent = jsonProduto.nome
@@ -31,9 +34,11 @@ function criarProduto(jsonProduto) {
 
     containerProduto.appendChild(produto)
     produto.appendChild(imagemProduto)
+    produto.appendChild(divInvisivelClick)
     produto.appendChild(divDescricao)
-    divDescricao.appendChild(nomeProduto)
-    divDescricao.appendChild(descricaoProduto)
+    divDescricao.appendChild(divDescricaoLabelP)
+    divDescricaoLabelP.appendChild(nomeProduto)
+    divDescricaoLabelP.appendChild(descricaoProduto)
     divDescricao.appendChild(precoProduto)
 
 }
@@ -65,15 +70,22 @@ function next() {
 
 }
 
-const produto = document.querySelector('.produto')
 
-function verificaId() {
 
-    
-
+function verificaId(produto) {
+    produto = produto.parentElement
+    console.log(produto.id)
 }
 
-produto.addEventListener('click', verificaId)
+produtos.forEach(addListener)
+
+function addListener(produto) {
+    const produtoFilho = produto.firstElementChild
+
+    produto.addEventListener('click', () => {
+        verificaId(produtoFilho)
+    })
+}
 
 buttonPrevious.addEventListener('click', previous)
 buttonNext.addEventListener('click', next)
