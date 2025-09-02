@@ -18,14 +18,16 @@ function criarProduto(jsonProduto) {
     const divDescricaoLabelP = document.createElement('div')
     const nomeProduto = document.createElement('label')
     const descricaoProduto = document.createElement('p')
+    const divAvaliacao = document.createElement('div')
     const precoProduto = document.createElement('span')
 
     produto.classList.add('produto')
-
     produto.setAttribute('id', jsonProduto.id)
 
     divDescricao.classList.add('container-descricao')
     divInvisivelClick.classList.add('div-invisivel-click')
+    
+    divAvaliacao.classList.add('container-avaliacao')
 
     imagemProduto.src = jsonProduto.imagem
     nomeProduto.textContent = jsonProduto.nome
@@ -39,6 +41,33 @@ function criarProduto(jsonProduto) {
     divDescricao.appendChild(divDescricaoLabelP)
     divDescricaoLabelP.appendChild(nomeProduto)
     divDescricaoLabelP.appendChild(descricaoProduto)
+
+    divDescricao.appendChild(divAvaliacao)
+
+    const calculaEstrelas = (produto) => {
+        let classificacao = produto.classificacao
+        const classificacaoMaxima = 5
+
+        for (let i = 0 ; i < classificacao ; i++) {
+            const estrela = document.createElement('i')
+            estrela.classList.add('fa-solid')
+            estrela.classList.add('fa-star')
+            divAvaliacao.appendChild(estrela)
+
+        }
+
+        while (classificacao < classificacaoMaxima) {
+            const estrelaVazia = document.createElement('i')
+            estrelaVazia.classList.add('fa-regular')
+            estrelaVazia.classList.add('fa-star')
+            divAvaliacao.appendChild(estrelaVazia)
+            classificacao++
+        }
+
+    }
+
+    calculaEstrelas(jsonProduto)
+
     divDescricao.appendChild(precoProduto)
 
 }
@@ -46,6 +75,7 @@ function criarProduto(jsonProduto) {
 carregarProdutos()
 
 const buttonPrevious = document.getElementById('previous')
+const buttonNext = document.getElementById('next') 
 
 let produtos = document.querySelectorAll('.produto')
 
@@ -59,8 +89,6 @@ function previous() {
 
 }
 
-const buttonNext = document.getElementById('next') 
-
 function next() {
 
     const containerProduto = document.getElementById('container-produtos')
@@ -69,8 +97,6 @@ function next() {
     produtos = document.querySelectorAll('.produto')
 
 }
-
-
 
 function retornaDadosProduto(produto) {
     produto = produto.parentElement
