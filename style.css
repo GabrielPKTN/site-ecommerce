@@ -262,7 +262,12 @@ main {
     text-align: justify;
 }
 
-.ava
+.container-avaliacao {
+    height: 100%;
+    display: flex;
+    align-items: end;
+    font-size: 10px;
+}
 
 .container-descricao span {
     font-weight: 600;
